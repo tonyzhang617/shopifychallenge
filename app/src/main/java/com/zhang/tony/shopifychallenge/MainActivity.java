@@ -3,7 +3,6 @@ package com.zhang.tony.shopifychallenge;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -97,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int j = 0, t = arrayItems.length(); j < t; ++j) {
                     try {
-                        Log.d("ITEM NAMES", arrayItems.getJSONObject(j).getString("title"));
                         if (arrayItems.getJSONObject(j).getString("title").equals("Aerodynamic Cotton Keyboard")) {
                             accuKeyboards += arrayItems.getJSONObject(j).getInt("quantity");
                         }
