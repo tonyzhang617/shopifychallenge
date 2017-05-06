@@ -112,11 +112,11 @@ public class MainActivity extends AppCompatActivity {
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 txtMainInfo.setText(Html.fromHtml(String.format(Locale.CANADA,
-                        "Total Revenue: <b>%.2f</b> CAD<br>Number of <i>Aerodynamic Cotton Keyboards</i> Sold: <b>%d</b>",
+                        "Total Order Revenue: <b>%.2f</b> CAD<br>Number of <i>Aerodynamic Cotton Keyboards</i> Sold: <b>%d</b>",
                         accuRevenue, accuKeyboards), Html.FROM_HTML_MODE_COMPACT));
             } else {
                 txtMainInfo.setText(Html.fromHtml(String.format(Locale.CANADA,
-                        "Total Revenue: <b>%.2f</b> CAD<br>Number of <i>Aerodynamic Cotton Keyboards</i> Sold: <b>%d</b>",
+                        "Total Order Revenue: <b>%.2f</b> CAD<br>Number of <i>Aerodynamic Cotton Keyboards</i> Sold: <b>%d</b>",
                         accuRevenue, accuKeyboards)));
             }
         }
