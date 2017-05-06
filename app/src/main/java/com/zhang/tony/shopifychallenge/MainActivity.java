@@ -1,8 +1,10 @@
 package com.zhang.tony.shopifychallenge;
 
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -107,8 +109,16 @@ public class MainActivity extends AppCompatActivity {
 
             progressBar.setVisibility(View.GONE);
             txtMainInfo.setVisibility(View.VISIBLE);
-            txtMainInfo.setText(String.format(Locale.CANADA,
-                    "Total Revenue: %.2f CAD\nNumber of Aerodynamic Cotton Keyboards Sold: %d", accuRevenue, accuKeyboards));
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                txtMainInfo.setText(Html.fromHtml(String.format(Locale.CANADA,
+                        "Total Revenue: <b>%.2f</b> CAD<br>Number of <i>Aerodynamic Cotton Keyboards</i> Sold: <b>%d</b>",
+                        accuRevenue, accuKeyboards), Html.FROM_HTML_MODE_COMPACT));
+            } else {
+                txtMainInfo.setText(Html.fromHtml(String.format(Locale.CANADA,
+                        "Total Revenue: <b>%.2f</b> CAD<br>Number of <i>Aerodynamic Cotton Keyboards</i> Sold: <b>%d</b>",
+                        accuRevenue, accuKeyboards)));
+            }
         }
     }
 }
